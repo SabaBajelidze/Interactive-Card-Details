@@ -1,4 +1,5 @@
-import bgMainMobile from './images/bg-main-desktop.png';
+import bgMainMobile from './images/bg-main-mobile.png';
+import bgMainDesktop from './images/bg-main-desktop.png';
 import cardBack from './images/bg-card-back.png';
 import cardFront from './images/bg-card-front.png';
 import cardLogo from './images/card-logo.svg';
@@ -17,14 +18,15 @@ function App() {
   return (
     <>
     <div id="main-div">
-      <img src={bgMainMobile} alt="mobile background" id="main-mobile" />
+      <img src={bgMainMobile} alt="mobile background" id="main-mobile" className='main-image' />
+      <img src={bgMainDesktop} alt="desktop background" id="main-desktop" className='main-image' display='none' />
       <div id="card-back">
         <img src={cardBack} alt="card-back" className='card-image' />
         <p id='cvc-code'>{cvc}</p>
       </div>
       <div id="card-front">
         <img src={cardFront} alt="card-front" className='card-image' />
-        <img src={cardLogo} alt='card-logo' id='card-logo' />
+        <img src={cardLogo} alt='card-logo' id='card-logo' className='card-image' />
         <p id='card-number'>{number}</p>
         <p id='card-name'>{name}</p>
         <p id='card-date'>{date.month}/{date.year}</p>
