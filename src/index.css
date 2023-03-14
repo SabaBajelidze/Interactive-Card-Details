@@ -7,6 +7,7 @@
   --light-grayish-violet: hsl(270, 3%, 87%);
   --dark-grayish-violet: hsl(279, 6%, 55%);
   --very-dark-violet: hsl(278, 68%, 11%);
+  --error: hsl(0, 100%, 66%);
 }
 
 * {
@@ -111,6 +112,11 @@ body {
   font-weight: 400;
   letter-spacing: 0.15em;
   margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+#form label:first-of-type {
+  margin-top: 0;
 }
 
 #form input {
@@ -118,7 +124,7 @@ body {
   padding: 5px;
   border-radius: 5px;
   border: 1px solid var(--light-grayish-violet);
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 #form input::placeholder {
@@ -129,6 +135,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 10px;
+  margin-top: 20px;
 }
 
 #date-input-div {
@@ -136,7 +143,7 @@ body {
   column-gap: 10px;
 }
 
-#form button {
+.button {
   width: 100%;
   height: 35px;
   border-radius: 5px;
@@ -144,4 +151,45 @@ body {
   background-color: var(--very-dark-violet);
   color: var(--white);
   letter-spacing: 0.1em;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+/* active styles */
+
+#form input:focus {
+  outline: none;
+}
+
+/* error styles */
+
+.error {
+  color: var(--error);
+  font-size: 0.7em;
+  margin-left: 5px;
+}
+
+/* Complete styles */
+
+#complete {
+  width: 85%;
+  margin: 100px auto 50px auto;
+  text-align: center;
+}
+
+#complete img {
+  margin-bottom: 25px;
+}
+
+#complete h1 {
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: var(--very-dark-violet);
+  font-size: 1.7em;
+  margin-bottom: 20px;
+}
+
+#complete p {
+  color: var(--dark-grayish-violet);
+  margin-bottom: 30px;
 }

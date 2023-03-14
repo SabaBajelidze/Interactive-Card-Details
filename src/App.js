@@ -3,13 +3,16 @@ import cardBack from './images/bg-card-back.png';
 import cardFront from './images/bg-card-front.png';
 import cardLogo from './images/card-logo.svg';
 import { useState } from 'react';
-import Form from './components/Form.js'
+
+import Form from './components/Form.js';
+import Complete from './components/Complete.js';
 
 function App() {
   const [cvc, setCvc] = useState('000');
   const [number, setNumber] = useState('0000 0000 0000 0000');
   const [name, setName] = useState('jane appleseed');
-  const [date, setDate] = useState({month: '00', year: '00'})
+  const [date, setDate] = useState({month: '00', year: '00'});
+  const [main, setMain] = useState(true);
 
   return (
     <>
@@ -27,7 +30,8 @@ function App() {
         <p id='card-date'>{date.month}/{date.year}</p>
       </div>
     </div>
-    <Form setCvc={setCvc} setNumber={setNumber} setName={setName} setDate={setDate}/>
+    {main && <Form setCvc={setCvc} setNumber={setNumber} setName={setName} setDate={setDate} date={date} setMain={setMain} />}
+    {!main && <Complete setMain={setMain}/>}
     </>
   );
 }
